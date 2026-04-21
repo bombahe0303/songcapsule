@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Capsule -ママのうたタイムカプセル-</title>
+    <!-- 
+        GitHub Pages 動作環境用コメント:
+        - このファイルは純粋な HTML/CSS/JavaScript で構成されています。
+        - サーバーサイドの処理を必要とせず、そのままホスティング可能です。
+        - Tailwind CSS (CDN版) を利用しています。
+    -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Zen Maru Gothic', sans-serif;
+            color: #5a4b4b;
+        }
+
+        .bg-pink-soft { background-color: #fff5f7; }
+        .text-pink-main { color: #e898ac; }
+        .bg-pink-main { background-color: #e898ac; }
+        .border-pink-main { border-color: #e898ac; }
+
+        .hero-section {
+            background: linear-gradient(rgba(255, 245, 247, 0.6), rgba(255, 245, 247, 0.6)), 
+                        url('https://images.unsplash.com/photo-1544126592-807daa2b565b?auto=format&fit=crop&q=80&w=1200') center/cover no-repeat;
+            min-height: 80vh;
+        }
+
+        .plan-card {
+            transition: transform 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .plan-card:hover {
+            transform: translateY(-5px);
+            border-color: #e898ac;
+        }
+
+        .cta-button {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(232, 152, 172, 0.4);
+        }
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(232, 152, 172, 0.6);
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #e898ac;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-pink-soft">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-pink-main">Song Capsule</h1>
+            <a href="#apply" class="bg-pink-main text-white px-4 py-2 rounded-full text-sm font-bold cta-button">お申し込み</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section flex items-center pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="inline-block bg-white/80 p-6 md:p-12 rounded-3xl shadow-xl">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Song Capsule</h2>
+                <p class="text-pink-main text-lg md:text-xl font-medium mb-6">ーママのうたタイムカプセル ー</p>
+                <div class="space-y-2 text-gray-700 leading-relaxed">
+                    <p class="text-xl">「大好きだよ」</p>
+                    <p class="text-xl">「生まれてきてくれてありがとう」</p>
+                    <p class="mt-4 text-sm md:text-base">その想いをママの歌声とムービーで<br class="hidden md:block">未来に残すソングカプセルプロジェクト</p>
+                </div>
+                <div class="mt-8">
+                    <a href="#plans" class="bg-pink-main text-white px-8 py-4 rounded-full text-lg font-bold cta-button inline-block">プランを見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monitor Offer -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto bg-pink-main/10 border-2 border-dashed border-pink-main rounded-2xl p-6 text-center">
+                <h3 class="text-xl font-bold text-pink-600 mb-2">⭐ モニター限定価格（先着10組）</h3>
+                <div class="flex flex-col md:flex-row justify-center gap-4 text-lg">
+                    <p>生歌ムービー: <span class="line-through text-gray-400">59,800円</span> → <span class="text-red-500 font-bold font-black">49,800円</span></p>
+                    <p>レコーディングムービー: <span class="line-through text-gray-400">79,800円</span> → <span class="text-red-500 font-bold font-black">69,800円</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans -->
+    <section id="plans" class="py-16">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12">選べるプラン</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Plan 1 -->
+                <div class="plan-card bg-white p-6 rounded-2xl shadow-md">
+                    <h4 class="text-lg font-bold mb-2 h-12">レコーディング<br>ベーシックプラン</h4>
+                    <p class="text-2xl font-bold text-pink-main mb-4">29,800円</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>ボイトレ60分（1回）</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>レコーディング</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>歌データ納品</li>
+                    </ul>
+                    <p class="mt-4 text-xs text-gray-500">※mailにてデータ送付</p>
+                </div>
+
+                <!-- Plan 2 -->
+                <div class="plan-card bg-white p-6 rounded-2xl shadow-md">
+                    <h4 class="text-lg font-bold mb-2 h-12">レコーディング＋<br>キーホルダープラン</h4>
+                    <p class="text-2xl font-bold text-pink-main mb-4">33,000円</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>ボイトレ60分</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>レコーディング</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>歌データ納品</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>QR付きキーホルダー</li>
+                    </ul>
+                    <p class="mt-4 text-xs text-gray-500">※オンラインボイトレも同額</p>
+                </div>
+
+                <!-- Plan 3 (Featured) -->
+                <div class="plan-card bg-white p-6 rounded-2xl shadow-lg relative border-2 border-pink-main">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-pink-main text-white px-4 py-1 rounded-full text-xs font-bold">一番人気！</div>
+                    <h4 class="text-lg font-bold mb-2 h-12">生歌ムービー<br>プラン</h4>
+                    <p class="text-2xl font-bold text-pink-main mb-4">59,800円</p>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>ボイトレ60分</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>生歌動画撮影(60分ロケ)</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>日常動画撮影(自宅・公園)</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>動画編集</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>QR付きキーホルダー</li>
+                    </ul>
+                </div>
+
+                <!-- Plan 4 -->
+                <div class="plan-card bg-white p-6 rounded-2xl shadow-md">
+                    <h4 class="text-lg font-bold mb-2 h-12">レコーディング<br>ムービープラン</h4>
+                    <p class="text-2xl font-bold text-pink-main mb-4">79,800円</p>
+                    <ul class="space-y-2 text-sm font-bold text-pink-main mb-2 italic">
+                        <li>おすすめ！</li>
+                    </ul>
+                    <ul class="space-y-2 text-sm">
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>ボイトレ＋レコーディング</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>自宅・公園ロケ(60分)</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>フル動画編集</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>歌・動画データ</li>
+                        <li><i class="fas fa-check text-pink-main mr-2"></i>QR付きキーホルダー</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Newborn Plan -->
+            <div class="mt-12 bg-white p-8 rounded-3xl shadow-md max-w-2xl mx-auto flex flex-col md:flex-row items-center gap-8 border-l-8 border-pink-main">
+                <div class="text-pink-main text-6xl">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div>
+                    <h4 class="text-xl font-bold mb-2">🎁 出産祝い：ニューボーンカプセル</h4>
+                    <p class="text-2xl font-bold text-pink-main mb-4">49,800円</p>
+                    <p class="text-sm text-gray-600 mb-4">ギフト券はLINE画像にてお送りします。贈り物に最適です。</p>
+                    <ul class="grid grid-cols-2 gap-2 text-sm">
+                        <li><i class="fas fa-star text-xs mr-1 text-pink-300"></i>ボイトレ60分</li>
+                        <li><i class="fas fa-star text-xs mr-1 text-pink-300"></i>生歌動画撮影</li>
+                        <li><i class="fas fa-star text-xs mr-1 text-pink-300"></i>動画編集</li>
+                        <li><i class="fas fa-star text-xs mr-1 text-pink-300"></i>QRキーホルダー</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timing Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-2xl font-bold mb-10">渡すタイミングは人それぞれ...</h3>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div class="p-4 bg-pink-soft rounded-xl"><p class="font-bold">出産記念</p><p class="text-xs">出産祝いに</p></div>
+                <div class="p-4 bg-pink-soft rounded-xl"><p class="font-bold">入園・卒園</p><p class="text-xs">成長の記録に</p></div>
+                <div class="p-4 bg-pink-soft rounded-xl"><p class="font-bold">10歳・20歳</p><p class="text-xs">ハーフ成人・成人式</p></div>
+                <div class="p-4 bg-pink-soft rounded-xl"><p class="font-bold">結婚式</p><p class="text-xs">晴れの日に</p></div>
+                <div class="p-4 bg-pink-soft rounded-xl"><p class="font-bold">家を旅立つ日</p><p class="text-xs">自立の瞬間に</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h3 class="text-2xl font-bold text-center mb-12">制作の流れ</h3>
+            <div class="space-y-8">
+                <div class="flex gap-4 items-start bg-white p-6 rounded-2xl shadow-sm border-l-4 border-pink-main">
+                    <div class="step-number shrink-0">1</div>
+                    <div>
+                        <p class="font-bold text-lg mb-1">レッスン & 撮影日程を決める</p>
+                        <p class="text-gray-600 text-sm">まずはお申し込みフォームまたはLINEから、ご希望の日程を調整します。</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start bg-white p-6 rounded-2xl shadow-sm border-l-4 border-pink-main">
+                    <div class="step-number shrink-0">2</div>
+                    <div>
+                        <p class="font-bold text-lg mb-1">歌のレッスン & ロケ撮影</p>
+                        <p class="text-gray-600 text-sm">歌のレッスン後、ご自宅や公園など名古屋市内のご希望の場所で撮影します。</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start bg-white p-6 rounded-2xl shadow-sm border-l-4 border-pink-main">
+                    <div class="step-number shrink-0">3</div>
+                    <div>
+                        <p class="font-bold text-lg mb-1">素材（声・写真）の送付</p>
+                        <p class="text-gray-600 text-sm">お子様の泣き声や「ママ」と呼ぶ声、お気に入りの写真などを送っていただきます。</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start bg-white p-6 rounded-2xl shadow-sm border-l-4 border-pink-main">
+                    <div class="step-number shrink-0">4</div>
+                    <div>
+                        <p class="font-bold text-lg mb-1">歌声の録音データを送付</p>
+                        <p class="text-gray-600 text-sm">ご自身で録音した歌声データを送付いただき、編集をスタートします。</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start bg-white p-6 rounded-2xl shadow-sm border-l-4 border-pink-main">
+                    <div class="step-number shrink-0">5</div>
+                    <div>
+                        <p class="font-bold text-lg mb-1">完成・納品</p>
+                        <p class="text-gray-600 text-sm">完成した動画データとQRコード付きキーホルダーをお届けします。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Voice Recording Guide -->
+            <div class="mt-12 bg-pink-main text-white p-8 rounded-3xl shadow-lg">
+                <h4 class="text-lg font-bold mb-4 text-center">🎤 ママにお願いしたいこと</h4>
+                <div class="grid md:grid-cols-2 gap-6 text-sm leading-relaxed">
+                    <div class="bg-white/10 p-5 rounded-xl">
+                        <p class="font-bold mb-2 flex items-center gap-2"><i class="fas fa-mobile-alt"></i> お子様の声を事前に録音♪</p>
+                        <p>泣き声、笑い声、「ママ」などの声をスマホで撮っておいてください。動画に入れることで、より特別なタイムカプセルになります！</p>
+                    </div>
+                    <div class="bg-white/10 p-5 rounded-xl">
+                        <p class="font-bold mb-2 flex items-center gap-2"><i class="fas fa-headphones"></i> きれいに録音するコツ</p>
+                        <p>イヤホンでカラオケを聴きながらボイスメモで録ると、歌声だけをきれいに録音できます。詳しい方法はご案内しますのでご安心ください✨</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-3xl">
+            <h3 class="text-2xl font-bold text-center mb-10">サービス詳細</h3>
+            <div class="grid gap-6">
+                <div class="flex border-b border-pink-100 py-4">
+                    <div class="w-1/3 font-bold">対象</div>
+                    <div class="w-2/3">ママ限定（ご希望によりパパ・祖父母様も可能です）</div>
+                </div>
+                <div class="flex border-b border-pink-100 py-4">
+                    <div class="w-1/3 font-bold text-pink-600">対応エリア</div>
+                    <div class="w-2/3">名古屋市中心<br><span class="text-xs text-gray-500">※出張撮影可（1,000円以上の交通費実費は別途ご負担いただきます）</span></div>
+                </div>
+                <div class="flex border-b border-pink-100 py-4">
+                    <div class="w-1/3 font-bold">オプション</div>
+                    <div class="w-2/3">
+                        ・👶 託児：30分800円 / 60分1,500円<br>
+                        ・🎁 追加キーホルダー：1,700円
+                    </div>
+                </div>
+                <div class="flex border-b border-pink-100 py-4">
+                    <div class="w-1/3 font-bold">納品について</div>
+                    <div class="w-2/3">データはmailにて、キーホルダーはご自宅へ郵送いたします。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application / CTA -->
+    <section id="apply" class="py-20 bg-pink-soft text-center">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold mb-8 text-pink-main">お申し込み・お問い合わせ</h3>
+            <p class="mb-10 text-gray-600 leading-relaxed text-sm md:text-base">
+                お子様の「今」の声を、あなたの「歌声」とともに。<br>
+                一生ものの宝物づくりをサポートします。
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-6">
+                <a href="https://lin.ee/pfv04Qm" target="_blank" class="bg-[#06C755] text-white px-10 py-5 rounded-full text-xl font-bold cta-button flex items-center justify-center gap-3">
+                    <i class="fab fa-line text-3xl"></i> 公式LINEで相談
+                </a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScWktCiE9jiTk2aRb956ySx9Sg72_vDwOZI8FZ9abwTX8l4cA/viewform?usp=dialog" target="_blank" class="bg-pink-main text-white px-10 py-5 rounded-full text-xl font-bold cta-button flex items-center justify-center gap-3">
+                    <i class="fas fa-file-signature text-3xl"></i> 予約フォームへ
+                </a>
+            </div>
+            
+            <div class="mt-12 flex justify-center gap-8 text-3xl text-pink-main">
+                <a href="https://instagram.com/songcapsule_project" target="_blank" class="hover:scale-110 transition-transform">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 border-t border-pink-100 text-center">
+        <p class="text-xl font-bold text-pink-main mb-4">Song Capsule</p>
+        <p class="text-xs text-gray-400">&copy; 2024 Song Capsule Project. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Simple Scroll Fade Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.plan-card, .step-number, .bg-white.p-6.rounded-2xl').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+</html>
